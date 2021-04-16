@@ -88,27 +88,10 @@ export default function App(props) {
       <Box sx={tabsSX}>
         <Tabs value={currentTab} onChange={handleChangeCurrentTab}>
          <Tab label="Get Strings" />	
-          <Tab label="Popcorn Sales" />
-          <Tab label="Fetcher" />
-          <Tab label="Hooks" />
-          <Tab label="Toggle Buttons" />
         </Tabs>
       </Box>
       <TabPanel value={currentTab} index={0}>
         <Strings />
-      </TabPanel>
-      <TabPanel value={currentTab} index={1}>
-        <PopcornSales />
-      </TabPanel>
-      <TabPanel value={currentTab} index={2}>
-        <Fetcher />
-      </TabPanel>
-      <TabPanel value={currentTab} index={3}>
-        {/*careful Icarus*/}
-        <Hooks name={aFunc().name} />
-      </TabPanel>
-      <TabPanel value={currentTab} index={4}>
-        <ToggleButtons />
       </TabPanel>
     </Box>
   );
