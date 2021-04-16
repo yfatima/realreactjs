@@ -13,6 +13,7 @@ import Fetcher from './components/Fetcher';
 import Hooks, {aFunc} from './components/Hooks';
 import ToggleButtons from './components/ToggleButtons';
 import PopcornSales from './components/PopcornSales';
+import Strings from './components/strings';
 
 export const useLinkOpener = () => {
   const windowObjectReferences = useMemo(() => ({}), []);
@@ -62,8 +63,8 @@ export default function App(props) {
   const [, openLink] = useLinkOpener();
   const handleChangeOpenGitHubLink = useCallback(() => {
     openLink(
-      "https://github.com/luminaxster/swe432-heroku-react",
-      "https://github.com/luminaxster"
+      "https://github.com/yfatima/realreactjs",
+      "https://github.com/yfatima"
     );
   }, [openLink]);
 
@@ -86,6 +87,7 @@ export default function App(props) {
       </AppBar>
       <Box sx={tabsSX}>
         <Tabs value={currentTab} onChange={handleChangeCurrentTab}>
+         <Tab label="Get Strings" />	
           <Tab label="Popcorn Sales" />
           <Tab label="Fetcher" />
           <Tab label="Hooks" />
@@ -93,16 +95,19 @@ export default function App(props) {
         </Tabs>
       </Box>
       <TabPanel value={currentTab} index={0}>
-        <PopcornSales />
+        <Strings />
       </TabPanel>
       <TabPanel value={currentTab} index={1}>
-        <Fetcher />
+        <PopcornSales />
       </TabPanel>
       <TabPanel value={currentTab} index={2}>
+        <Fetcher />
+      </TabPanel>
+      <TabPanel value={currentTab} index={3}>
         {/*careful Icarus*/}
         <Hooks name={aFunc().name} />
       </TabPanel>
-      <TabPanel value={currentTab} index={3}>
+      <TabPanel value={currentTab} index={4}>
         <ToggleButtons />
       </TabPanel>
     </Box>
